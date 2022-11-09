@@ -20,6 +20,7 @@ export default function AddModule() {
     }
 
     const  onSubmit= async(e)=>{
+        console.log(module);
         e.preventDefault();
         await axios.post("http://localhost:8080/addModule",module)
                     .then((res)=>{
@@ -45,8 +46,8 @@ export default function AddModule() {
                         <input type={"text"}
                         className="form-control"
                         placeholder='Enter Module Code'
-                        name="modulecode"
-                        defaultvalue={moduleCode}
+                        name="moduleCode"
+                        defaultValue={moduleCode}
                         onChange={(e)=>onInputChange(e)}
                         />
                     </div>
@@ -58,8 +59,8 @@ export default function AddModule() {
                         <input type={"text"}
                         className="form-control"
                         placeholder='Enter Module Name'
-                        name="modulename"
-                        defaultvalue={moduleName}
+                        name="moduleName"
+                        defaultValue={moduleName}
                         onChange={(e)=>onInputChange(e)}
                         />
                     </div>
@@ -71,8 +72,8 @@ export default function AddModule() {
                         <input type={"date"}
                         className="form-control"
                         placeholder='Enter Start Date of the Module'
-                        name="startdate"
-                        defaultvalue={moduleStartDate}
+                        name="moduleStartDate"
+                        defaultValue={moduleStartDate}
                         onChange={(e)=>onInputChange(e)}
                         />
                     </div>
@@ -84,7 +85,7 @@ export default function AddModule() {
                         className="form-control"
                         placeholder='Enter Course Name'
                         name="course" 
-                        defaultvalue={course}
+                        defaultValue={course}
                         onChange={(e)=>onInputChange(e)}
                         />
                     </div>

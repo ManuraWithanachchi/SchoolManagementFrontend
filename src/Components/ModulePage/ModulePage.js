@@ -25,7 +25,7 @@ export default function ModulePage() {
     }
 
   return (
-    <div className='modulePage'>
+    <div className='modulePage p-5'>
         <div className='upperPart'>
             <h4>Modules List</h4>
 
@@ -45,15 +45,17 @@ export default function ModulePage() {
                 <tbody>
                     {
                         modules.map((module,index)=>(
-                            <tr>
-                                
+                            <tr key={module.id}>
                                 <td>{module.moduleCode}</td>
                                 <td>{module.moduleName}</td>
                                 <td>{module.moduleStartDate}</td>
                                 <td>{module.course}</td>
-                                <button  className='btn btn-outline-danger mx-2 my-2' 
-                                onClick={()=>deleteModule(module.id)}
-                                >Delete</button>
+                                <td>
+                                    <button  className='btn btn-outline-danger mx-2 my-2' 
+                                        onClick={()=>deleteModule(module.id)}
+                                    >Delete
+                                    </button>
+                                </td>
                             </tr>
                         ))
                     }

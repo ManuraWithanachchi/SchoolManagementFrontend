@@ -42,12 +42,8 @@ function App() {
               element={<LecturerAdding />}
             />
             <Route exact path="lecturer/department" element={<Department />} />
-          </Routes>
-          <Routes>
             <Route exact path="/module" element={<ModulePage/>}/>
-          </Routes>
-          <Routes>
-            <Route exact path="/addModule" element={<AddModule/>}/>
+             <Route exact path="/addModule" element={<AddModule/>}/>
           </Routes>
         </div>
         <Footer />

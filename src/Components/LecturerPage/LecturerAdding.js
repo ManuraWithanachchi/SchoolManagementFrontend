@@ -75,9 +75,9 @@ function LecturerAdding() {
   };
 
   return (
-    <div style={{ maxWidth: "100%" }}>
+    <div style={{ maxWidth: "100%" }} className='p-5'>
       <h3> {id ? "Update Existing Lecturer Record" : "Add New Lecturer"}</h3>
-      <div style={{ width: "500px", padding: "30px" }}>
+      <div style={{ width: "500px", padding: "30px" }} >
         <form onSubmit={handleOnSubmit}>
           <div className="mb-3">
             <label for="name" className="form-label">
