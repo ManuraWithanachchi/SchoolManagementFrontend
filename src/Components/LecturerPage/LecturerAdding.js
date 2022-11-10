@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate, Link } from "react-router-dom";
 //import "./AddingLecturer.css";
+import { toast } from 'react-toastify';
 
 const initialLecturer = {
   name: "",
@@ -19,12 +20,13 @@ function LecturerAdding() {
   const navigate = useNavigate();
   const { id } = useParams();
 
+
   //Create new Lecturer - Send form data to the Backend
   const addLecturer = async (lecturerData) => {
     await axios
       .post("http://localhost:8080/lecturer", lecturerData)
       .then((res) => {
-        window.alert("Lecturer Added Successfully.");
+        toast.success("Lecturer Added Successfully.");
       })
       .catch((err) => {
         console.log(err);
@@ -36,7 +38,7 @@ function LecturerAdding() {
     await axios
       .put(`http://localhost:8080/lecturer/update/${id}`, lecturerData)
       .then((res) => {
-        window.alert("Lecturer Details Updated Successfully.");
+        //toast.success("Lecturer Details Updated Successfully.");
       })
       .catch((err) => {
         console.log(err);
@@ -70,8 +72,9 @@ function LecturerAdding() {
     } else {
       updateLecturer(lecturer, id);
       navigate("/lecturerPage");
+      toast.success("Lecturer Details Updated Successfully.");
     }
-    window.location.reload();
+    setLecturer(initialLecturer);
   };
 
   return (

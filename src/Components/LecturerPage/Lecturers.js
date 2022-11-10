@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { toast } from 'react-toastify';
 
 function Lecturers() {
   const [lecturers, setLecturers] = useState([]);
@@ -28,7 +29,7 @@ function Lecturers() {
       await axios
         .delete(`http://localhost:8080/lecturer/${id}`)
         .then((res) => {
-          window.alert("Lecturer Record has been deleted Successfully.");
+          toast.error(res.data);
         })
         .catch((err) => {
           console.log(err);
